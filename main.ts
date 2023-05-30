@@ -1,13 +1,16 @@
-let revenue: number = 1000;
-let bonus: number = 500;
-
-let res: number = revenue + bonus;
-console.log(res);
-
-function getFullName(firstname: string, surname: string): string {
-  return `${firstname} ${surname}`;
+function getFullName(user: { firstname: string; surname: string }): string {
+  return `${user.firstname} ${user.surname}`;
 }
 
-const getFullNameArrow = (firstname: string, surname: string): string => {
-  return `${firstname} ${surname}`;
+const userinfo = {
+  firstname: "Андрей",
+  surname: "Андреев",
+  city: "Moscow",
+  age: 33,
+  skills: {
+    dev: true,
+    devops: true,
+  },
 };
+
+console.log(getFullName(userinfo));
